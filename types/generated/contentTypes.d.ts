@@ -402,6 +402,31 @@ export interface ApiBuildingBuilding extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTestTest extends Struct.SingleTypeSchema {
+  collectionName: 'tests';
+  info: {
+    displayName: 'Test';
+    pluralName: 'tests';
+    singularName: 'test';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::test.test'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    test: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -912,6 +937,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::building.building': ApiBuildingBuilding;
+      'api::test.test': ApiTestTest;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,4 +1,5 @@
-'use strict';
+"use strict";
+const axios = require("axios");
 
 module.exports = {
   /**
@@ -16,5 +17,14 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap(/*{ strapi }*/) {
+    setInterval(async () => {
+      try {
+        await axios.get("https://hipeac-strapi.onrender.com/api/buildings/1");
+        console.log("TEST!");
+      } catch (error) {
+        console.error("TEST failed", error.message);
+      }
+    }, 250000);
+  },
 };
