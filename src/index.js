@@ -20,7 +20,7 @@ module.exports = {
   bootstrap(/*{ strapi }*/) {
     setInterval(async () => {
       try {
-        await axios.get("https://hipeac-strapi.onrender.com/api/buildings/1");
+        await axios.get("https://hipeac-strapi.onrender.com/api/test");
         console.log("TEST!");
       } catch (error) {
         console.error("TEST failed", error.message);
