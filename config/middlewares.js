@@ -10,13 +10,3 @@ module.exports = [
   "strapi::favicon",
   "strapi::public",
 ];
-module.exports.settings = {
-  cors: {
-    origin: [
-      "http://localhost:3000", // Your frontend URL (if you're testing locally)
-      "https://your-frontend-domain.com", // Your live frontend domain
-      "https://res.cloudinary.com", // Allow Cloudinary's domain
-    ],
-    headers: "*", // Allow all headers
-  },
-};
