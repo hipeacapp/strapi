@@ -385,6 +385,9 @@ export interface ApiBuildingBuilding extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    floorPlan: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    graph: Schema.Attribute.JSON & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     lat: Schema.Attribute.Float & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

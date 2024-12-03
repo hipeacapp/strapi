@@ -36,6 +36,19 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "floorPlan": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "graph": {
+      "type": "json",
+      "required": true
     }
   }
 }
