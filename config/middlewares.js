@@ -23,8 +23,7 @@ module.exports = ({ env }) => [
   {
     name: "strapi::cors",
     config: {
-      origin: ["http://localhost:3000", "https://ariadne-admin.web.app", "*"],
-      credentials: true,
+      origin: ["http://localhost:3000", "https://ariadne-admin.web.app"],
     },
   },
   "strapi::poweredBy",
