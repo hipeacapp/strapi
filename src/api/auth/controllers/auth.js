@@ -23,4 +23,12 @@ module.exports = {
       user,
     });
   },
+  async logout(ctx) {
+    ctx.cookies.set("jwt", null, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+    });
+    ctx.send({ message: "Logged out successfully" });
+  },
 };

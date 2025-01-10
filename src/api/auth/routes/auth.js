@@ -9,5 +9,14 @@ module.exports = {
         middlewares: [],
       },
     },
+    {
+      method: "POST",
+      path: "/auth/logout",
+      handler: "auth.logout",
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };
