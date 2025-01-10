@@ -2,11 +2,10 @@ module.exports = {
   routes: [
     {
       method: "POST",
-      path: "/auth/local",
+      path: "/auth/login",
       handler: "auth.login",
       config: {
-        policies: [],
-        middlewares: [],
+        auth: false,
       },
     },
     {
@@ -14,8 +13,7 @@ module.exports = {
       path: "/auth/logout",
       handler: "auth.logout",
       config: {
-        policies: [],
-        middlewares: [],
+        auth: false,
       },
     },
   ],
