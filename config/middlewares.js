@@ -37,9 +37,11 @@ module.exports = ({ env }) => [
   {
     name: "strapi::session",
     config: {
-      cookie: {
-        secure: process.env.NODE_ENV === "production", // Secure cookies in production
-      },
+      key: "koa.sess",
+      maxAge: 86400000, // 1 day in milliseconds
+      httpOnly: true,
+      secure: env("NODE_ENV") === "production", // Use secure cookies in production
+      sameSite: "lax",
     },
   },
   "strapi::favicon",
