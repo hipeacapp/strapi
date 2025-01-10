@@ -40,16 +40,7 @@ module.exports = ({ env }) => [
       },
     },
   },
-  {
-    name: "strapi::session",
-    config: {
-      key: "koa.sess",
-      maxAge: 86400000, // 1 day in milliseconds
-      httpOnly: true,
-      secure: env("NODE_ENV") === "production", // Use secure cookies in production
-      sameSite: "lax",
-    },
-  },
+  "strapi::session",
   "strapi::favicon",
   "strapi::public",
 ];
