@@ -20,7 +20,13 @@ module.exports = ({ env }) => [
       },
     },
   },
-  "strapi::cors",
+  {
+    name: "strapi::cors",
+    config: {
+      origin: ["http://localhost:3000", "https://ariadne-admin.web.app/"],
+      credentials: true,
+    },
+  },
   "strapi::poweredBy",
   "strapi::query",
   {
