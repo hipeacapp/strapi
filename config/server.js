@@ -1,6 +1,8 @@
 module.exports = ({ env }) => ({
   host: env("HOST", "0.0.0.0"),
-  proxy: true,
+  proxy: {
+    koa: true,
+  },
   url: env("APP_URL", "https://hipeac-strapi.onrender.com"),
   port: env.int("PORT", 1337),
   app: {
