@@ -8,7 +8,7 @@ module.exports = {
     // Set the JWT token as an HTTP-only cookie
     ctx.cookies.set("token", jwt, {
       httpOnly: true, // Ensures the cookie is only accessible via HTTP requests
-      secure: process.env.NODE_ENV === "production", // Only set secure cookies in production (HTTPS)
+      secure: true, // Only set secure cookies in production (HTTPS)
       maxAge: 60 * 60 * 24 * 7 * 1000, // Set the cookie to expire in 7 days
       sameSite: "Strict", // Restrict cross-site cookie access
       path: "/", // Make the cookie accessible across the entire site
