@@ -40,7 +40,7 @@ module.exports = ({ env }) => [
       key: "koa.sess",
       maxAge: 86400000, // 1 day in milliseconds
       httpOnly: true,
-      secure: true, // Use secure cookies in production
+      secure: env("NODE_ENV") === "production", // Use secure cookies in production
       sameSite: "lax",
     },
   },

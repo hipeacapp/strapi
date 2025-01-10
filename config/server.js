@@ -9,10 +9,4 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
   },
   url: "https://hipeac-strapi.onrender.com",
-  admin: {
-    url: env("PUBLIC_ADMIN_URL", "/"),
-    auth: {
-      secret: env("ADMIN_JWT_SECRET", ""),
-    },
-  },
 });
