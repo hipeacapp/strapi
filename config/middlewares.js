@@ -34,7 +34,14 @@ module.exports = ({ env }) => [
       },
     },
   },
-  "strapi::session",
+  {
+    name: "strapi::session",
+    config: {
+      cookie: {
+        secure: process.env.NODE_ENV === "production", // Secure cookies in production
+      },
+    },
+  },
   "strapi::favicon",
   "strapi::public",
 ];
