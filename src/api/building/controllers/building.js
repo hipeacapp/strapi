@@ -12,10 +12,8 @@ module.exports = createCoreController(
     async create(ctx) {
       // Get the authenticated user
       const { username } = ctx.state.user;
-
       // Append the owner field to the request body
       ctx.request.body.data.owner = username;
-
       // Call the default core controller create method
       const response = await super.create(ctx);
       return response;
@@ -23,7 +21,6 @@ module.exports = createCoreController(
     async find(ctx) {
       const { user } = ctx.state; // Access the authenticated user
       const { username } = user;
-
       // Fetch buildings where the owner field matches the username
       const buildings = await strapi.entityService.findMany(
         "api::building.building",
@@ -32,7 +29,6 @@ module.exports = createCoreController(
           filters: { owner: { $eq: username } },
         }
       );
-
       return buildings;
     },
   })
