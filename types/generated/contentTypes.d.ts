@@ -398,6 +398,7 @@ export interface ApiBuildingBuilding extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     lon: Schema.Attribute.Float & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    owner: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

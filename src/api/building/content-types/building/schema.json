@@ -38,16 +38,20 @@
       "required": true
     },
     "floorPlan": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "graph": {
       "type": "json",
+      "required": true
+    },
+    "owner": {
+      "type": "string",
       "required": true
     }
   }
