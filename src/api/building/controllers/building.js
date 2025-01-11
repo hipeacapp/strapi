@@ -20,5 +20,20 @@ module.exports = createCoreController(
       const response = await super.create(ctx);
       return response;
     },
+    async find(ctx) {
+      const { user } = ctx.state; // Access the authenticated user
+      const { username } = user;
+
+      // Fetch buildings where the owner field matches the username
+      const buildings = await strapi.entityService.findMany(
+        "api::building.building",
+        {
+          // @ts-ignore
+          filters: { owner: { $eq: username } },
+        }
+      );
+
+      return buildings;
+    },
   })
 );
