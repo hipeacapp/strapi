@@ -18,6 +18,16 @@ module.exports = createCoreController(
       const response = await super.create(ctx);
       return response;
     },
+    async update(ctx) {
+      // Get the authenticated user
+      const { username } = ctx.state.user;
+
+      ctx.request.body.data.owner = username;
+
+      // Call the default core controller update method
+      const response = await super.update(ctx);
+      return response;
+    },
     async find(ctx) {
       const { user } = ctx.state; // Access the authenticated user
       const { username } = user;
